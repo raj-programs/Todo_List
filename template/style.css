@@ -1,0 +1,305 @@
+/* --- Timeline Container Styling --- */
+.timeline-container {
+    padding: 60px 20px;
+    max-width: 900px; /* Limits the width of the whole timeline section */
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.timeline {
+    list-style: none; /* Removes default bullet points */
+    padding: 0;
+    margin: 0;
+    position: relative;
+}
+
+/* --- The Main Vertical Line --- */
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 20px; /* Positioning the line to the left of the content */
+    width: 3px;
+    background-color: #fff; /* Light grey line */
+}
+
+/* --- Individual Timeline Entry --- */
+.timeline-item {
+    position: relative;
+    margin-bottom: 30px; /* Space between entries */
+    padding-left: 50px; /* Makes room for the line and dot */
+}
+
+/* --- The Circular Dot Marker --- */
+.timeline-dot {
+    position: absolute;
+    left: 10px; /* Aligns the dot perfectly on the line (20px line - 10px dot radius) */
+    top: 5px;
+    width: 20px;
+    height: 20px;
+    background-color: #00FF7F; /* Primary color for the marker */
+    border: 3px solid #fff; /* White border for contrast against the line */
+    border-radius: 50%;
+    z-index: 10;
+}
+
+/* --- Content Styling --- */
+.timeline-content {
+    background: #1A1F29;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.timeline-content h3 {
+    margin-top: 0;
+    color: #FFB800;
+    font-size: 1.4em;
+}
+
+.timeline-content h4 {
+    margin: 5px 0;
+    color: #E5E5E5;
+    font-weight: normal;
+    font-size: 1.1em;
+}
+
+.timeline-dates {
+    font-style: italic;
+    color: #00FFFF;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.timeline-content ul {
+    list-style: disc; /* Use standard bullets for accomplishments */
+    padding-left: 20px;
+    margin: 10px 0;
+}
+
+.tech-stack {
+    margin-top: 15px;
+    font-size: 0.9em;
+    color: #007bff; /* Match the primary color */
+}
+
+/* --- Responsive Adjustments (Optional but Recommended) --- */
+@media (max-width: 600px) {
+    .timeline-container {
+        padding: 0 10px;
+    }
+    
+    /* Slightly thinner line and dot for smaller screens */
+    .timeline::before {
+        left: 15px; 
+        width: 2px;
+    }
+
+    .timeline-dot {
+        left: 8px;
+        width: 15px;
+        height: 15px;
+    }
+
+    .timeline-item {
+        padding-left: 40px;
+        margin-bottom: 20px;
+    }
+}
+
+/* --- Global Styles --- */
+body {
+    margin: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    background-color: #0d1117;
+    color: #ffffff;
+}
+
+h1, h2, h3, h4 {
+    margin: 10px 0;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+/* --- Header --- */
+header {
+   background-color: #121518; 
+    color: #E5E5E5;
+    padding: 40px 20px 20px 20px;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 3em;
+    margin-bottom: 10px;
+}
+
+header nav {
+    margin: 20px 0;
+}
+
+header nav a {
+    margin: 0 15px;
+    color: #00afff;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+header nav a:hover {
+    color: #00FF7F;
+}
+
+header p {
+    max-width: 700px;
+    margin: 20px auto 0 auto;
+    font-size: 1.1em;
+}
+
+/* --- Sections --- */
+section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #121518;
+}
+
+section h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+    color: #00AFFF;
+}
+
+/* --- About Me --- */
+#about p {
+    max-width: 700px;
+    margin: auto;
+    font-size: 1.1em;
+    color: #E5E5E5;
+}
+
+#about ul {
+    list-style-type: disc;
+    max-width: 500px;
+    margin: 20px auto 0 auto;
+    padding-left: 20px;
+    text-align: left;
+}
+
+/* --- Projects --- */
+.projects {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+.card {
+    background: #1A1F29;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    padding: 20px;
+    width: 300px;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 380px;
+}
+
+.card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    color: #FFB800;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #E5E5E5;
+    font-size: 0.95em;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0,0,0,0.2), 0 0 15px rgba(0,255,127,0.5);
+}
+
+
+/* --- Skills --- */
+.skill-set{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+#skills .card {
+    margin: 20px auto;
+    width: 250px;
+    background: #00aaff10;
+    border: 2px solid #00aaff20;
+    transition: transform 0.3s, background 0.3s;
+}
+
+#skills .card:hover {
+    transform: scale(1.05);
+    background: #00aaff30;
+}
+
+#skills h3 {
+    color: #00FFFF;
+}
+
+/* --- Contact --- */
+#contact a {
+    display: inline-block;
+    margin: 10px;
+    font-size: 30px;
+    color: #E5E5E5;
+    transition: transform 0.3s, color 0.3s;
+}
+.contact-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    margin-top: 20px;
+}
+#contact a:hover {
+    transform: scale(1.2);
+    color: #00FF7F;
+}
+
+/* --- Footer --- */
+footer {
+    background: #121518;
+    color: #ccc;
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .projects {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #skills .card {
+        width: 80%;
+    }
+}
+
+@media (max-width: 600px) {
+    header nav {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+}
